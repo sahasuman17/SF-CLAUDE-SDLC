@@ -1,0 +1,155 @@
+.tree-container {
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.borrower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.center-connector {
+    display: flex;
+    justify-content: center;
+    left: -37px;
+    position: relative;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 20px;
+    background-color: #0070d2; /* Blue line */
+}
+
+.horizontal-line-container {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.horizontal-line {
+    height: 2px;
+    background-color: #0070d2;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 0;
+}
+
+.child-nodes {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: -9px;
+    position: relative;
+    z-index: 1;
+}
+
+.child-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+.child-connector {
+    width: 2px;
+    height: 20px;
+    background-color: #0070d2;
+    margin-bottom: 5px;
+}
+
+.child-box {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    min-width: 180px;
+    text-align: center;
+    font-weight: 500;
+}
+.bottom-separator {
+  height: 2px;
+  background-color: #e5e5e5; /* Light grey */
+  margin-top: 1rem;
+  width: 100%;
+}
+.icon-box {
+  width: 32px;
+  height: 32px;
+  background-color: #e0e5ee;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box-small {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e5ee;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-box-medium {
+  width: 28px;
+  height: 28px;
+  background-color: #e0e5ee;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-inside {
+  --slds-c-icon-color-foreground-default: #1a2745;
+}
+
+
+.icon-label {
+  font-size: 1rem;
+}
+/* for the image */
+.background-banner {
+  background-image: url(/resource/Bridge);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 45%; /* 🔽 shift image lower */
+  position: relative;
+  padding: 0.35rem 1rem 1rem 1rem;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+/* Optional fade overlay for text readability */
+.background-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.65); /* soft fade */
+  z-index: 0;
+}
+
+.background-banner > * {
+  position: relative;
+  z-index: 1;
+}

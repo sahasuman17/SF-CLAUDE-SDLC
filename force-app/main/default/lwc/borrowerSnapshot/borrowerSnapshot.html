@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Borrower Snapshot" icon-name="standard:contact">
+        <div class="slds-box slds-theme_shade slds-p-around_medium">
+            <!-- Row 1 -->
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item size="6" padding="around-small">
+					<p>
+                        <strong>Total Loan Amount:</strong>
+                        <lightning-formatted-number
+                            class="slds-m-left_small"
+                            value={totalLoanAmount}
+                            format-style="currency">
+                        </lightning-formatted-number>
+                    </p>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <p>
+                        <strong>Outstanding Balance:</strong>
+                        <lightning-formatted-number
+                            class="slds-m-left_small"
+                            value={outstandingBalance}
+                            format-style="currency">
+                        </lightning-formatted-number>
+                    </p>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!-- Row 2 -->
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item size="6" padding="around-small">
+                    <p>
+                        <strong>Total Active Loans:</strong>
+                        <span class="slds-m-left_small">{totalActiveLoans}</span>
+                    </p>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+					<p>
+                        <strong>Total Loan Officers:</strong>
+                        <span class="slds-m-left_small">{totalLoanOfficers}</span>
+                    </p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

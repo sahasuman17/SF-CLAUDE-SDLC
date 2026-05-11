@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Profile Summary">
+        <div class="slds-p-around_medium" style="border-top:solid;border-width:thin;">
+            <template if:true={redFlags}>
+
+              <div class="report-section" >
+                    <h3 class="slds-text-heading_small red-flag-header" style="font-weight:bold">Red Flags</h3>
+                    <ul class="slds-list_unordered">
+                        <template for:each={redFlags} for:item="item">
+                            <li key={item.id} class="slds-item" style="display:table">
+                                <span style="display:list-item" class="bullet red-bullet animated-bullet"></span>
+                                <lightning-formatted-rich-text
+                                    style="display:table-cell"
+                                    value={item.text}>
+                                </lightning-formatted-rich-text>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <div class="report-section">
+                    <h3 class="slds-text-heading_small positive-header" style="font-weight:bold">Positive Indicators</h3>
+                    <ul class="slds-list_unordered slds-m-bottom_medium">
+                        <template if:true={positiveIndicators} for:each={positiveIndicators} for:item="item">
+                            <li key={item.id} class="slds-item" style="display:table">
+                                <span style="display:list-item" class="bullet green-bullet" ></span>
+                                <span style="display:table-cell">{item.text}</span>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+
+
+            </template>
+            <template if:false={richTextContent}>
+                <p>No description available for this loan.</p>
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                    Error loading description: {error}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,3 @@
+<apex:page controller="PrintableReportCtrl" renderAs="pdf" cache="false">
+    <apex:outputText value="{!htmlContent}" escape="false"/>
+</apex:page>

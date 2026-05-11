@@ -1,0 +1,35 @@
+<template>
+    <div class="container">
+        <h2 style="text-align:center" class="title">Choose Data Cloud entity to configure sync</h2>
+        <div class="card-wrapper">
+            <!-- Calculated Insight -->
+            <div class={selected} onclick={handleClickCalculated}>
+                <div class="content">
+                    <lightning-icon icon-name="standard:event" class="icon" alternative-text="Event" title="Event"></lightning-icon>
+                    <div class="separator"></div>
+                    <div class="text">
+                        <h3>Calculated Insight</h3>
+                        <p>Get metadata for all active Calculated insight from Data Cloud.</p>
+                    </div>
+                </div>
+                <div class={check}>&#10003;</div>
+            </div>
+
+            <!-- Data Model Object (disabled) -->
+            <div class="card disabled">
+                <div class="content">
+                   
+                     <lightning-icon  icon-name="standard:activations" alternative-text="Connected" title="Connected"> </lightning-icon>
+                    
+                    <div class="separator"></div>
+                    <div class="text">
+                        <h3>Data Graphs</h3>
+                        <p>Get precomputed denormalized graphs of DMOs and CIs from Data Cloud.</p>
+                    </div>
+                </div>
+                 <lightning-icon class="corner-lock" size="x-small" icon-name="utility:lock" alternative-text="Connected" title="Connected">
+        </lightning-icon>
+            </div>
+        </div>
+    </div>
+</template>

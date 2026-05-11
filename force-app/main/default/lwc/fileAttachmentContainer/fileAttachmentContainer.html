@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Case Attachments Management" icon-name="standard:case">
+        <div class="slds-p-around_medium">
+            <!-- 
+                The recordId property of the child component (fileUploadRecipe) 
+                is dynamically bound to the parent component's recordId property.
+            -->
+            <c-file-upload-recipe record-id={recordId}></c-file-upload-recipe>
+                        <!-- Button to trigger the relinking -->
+            <div class="slds-m-top_large">
+                <lightning-button 
+                    label="Relink Uploaded Files" 
+                    onclick={handleRelinkClick} 
+                    variant="brand"
+                    disabled={isRelinkDisabled}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

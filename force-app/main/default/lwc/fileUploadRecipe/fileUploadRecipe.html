@@ -1,0 +1,78 @@
+<template>
+    <div class="slds-box attachment-container">
+        
+        <!-- Attachment Header -->
+        <div class="slds-grid slds-grid_align-spread slds-wrap header-section">
+            <h2 class="slds-text-heading_small slds-p-bottom_xx-small attachment-title">
+                Attachments
+            </h2>
+            <div class="slds-text-heading_small file-count">
+                Files ({files.length})
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap file-layout">
+            
+            <!-- Left Column: Upload Area -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 upload-area-col">
+                <div class="upload-area">
+                  
+                    <lightning-file-upload
+                        label="Attach Files"
+                        name="fileUploader"
+                        record-id={recordId}
+                        onuploadfinished={handleUploadFinished}
+                        multiple
+                        accept=".pdf,.png,.jpg,.jpeg,.doc,.docx"
+                        class="file-upload-standard"
+                    ></lightning-file-upload>
+                    <p class="drop-text">Files will be attached directly to the Case record.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: File List -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12 file-list-col">
+                
+                <div class="info-message">
+                    <lightning-icon icon-name="utility:info" size="small"></lightning-icon>
+                    <span class="slds-m-left_x-small">File size must not exceed XXXX MB. Use clear and descriptive file names. Avoid spaces, special characters, or very long names.</span>
+                </div>
+
+                <!-- File List Cards -->
+                <div class="slds-grid slds-wrap file-cards-container">
+                    <template for:each={files} for:item="file">
+                        <div key={file.contentDocumentId} class="slds-col slds-size_1-of-1 slds-small-size_1-of-2 slds-p-around_x-small">
+                            <div class="file-card slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                                
+                                <!-- File Icon and Name -->
+                                <div class="slds-grid slds-has-flexi-truncate slds-col_bump-right">
+                                    <lightning-icon icon-name="doctype:attachment" size="small" class="slds-m-right_x-small file-icon"></lightning-icon>
+                                    <span class="file-name slds-truncate">{file.title}</span>
+                                </div>
+                                
+                                <!-- Delete Button (Conditional) -->
+                                <button 
+                                    class="delete-button"
+                                    onclick={handleDeleteFile} 
+                                    data-id={file.contentDocumentId}
+                                    title={deleteTooltip}
+                                    disabled={isDeleteDisabled}
+                                >
+                                    <lightning-icon icon-name="utility:delete" size="x-small" variant="error"></lightning-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <template if:true={isLoading}>
+                    <div class="loading-overlay">
+                        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                    </div>
+                </template>
+                <template if:false={files.length}>
+                    <p class="slds-p-around_medium text-gray-500">No files attached yet.</p>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

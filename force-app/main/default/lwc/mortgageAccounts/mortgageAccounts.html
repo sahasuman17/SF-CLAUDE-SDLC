@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Unified Account">
+        <div class="slds-p-around_small">
+            <template if:true={hasData}>
+                <a onclick={toggleDetails}
+                class="slds-text-link slds-text-heading_small">
+                    {unifiedAccountName}
+                </a>
+
+
+                <template if:true={showDetails}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={lstMortgages}
+                        columns={columns}
+                        hide-checkbox-column="true"
+                        class="slds-m-top_small">
+                    </lightning-datatable>
+                </template>
+            </template>
+
+            <template if:false={hasData}>
+                <p>No related mortgage data found for this account.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

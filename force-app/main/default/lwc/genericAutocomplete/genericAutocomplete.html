@@ -1,0 +1,50 @@
+<template>
+    <div class="slds-combobox_container">
+        <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+            aria-expanded="true" aria-haspopup="listbox" role="combobox">
+            <!-- Search Input Field -->
+            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                <lightning-input
+                    label={label}
+                    type="search"
+                    onchange={handleSearch}
+                    onclick={handleOpenDropdown}
+                    onblur={handleCloseDropdown}
+                    value={searchKey}>
+                </lightning-input>
+            </div>
+            
+            <!-- Dropdown List of Results -->
+            <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox"
+                if:true={showDropdown}>
+                <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                    <template if:true={hasResults}>
+                        <template for:each={results} for:item="result">
+                            <li key={result.Id} role="presentation" class="slds-listbox__item"
+                                data-id={result.Id} data-name={result.Name} onmousedown={handleSelect}>
+                                <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                    role="option">
+                                    <span class="slds-media__body">
+                                        <span class="slds-listbox__option-text slds-listbox__option-text_entity">{result.Name}</span>
+                                        <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">
+                                            {result.subTitle}
+                                        </span>
+                                    </span>
+                                </div>
+                            </li>
+                        </template>
+                    </template>
+                    <template if:false={hasResults}>
+                        <li role="presentation" class="slds-listbox__item">
+                            <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                <span class="slds-media__body">
+                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">No results found</span>
+                                </span>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

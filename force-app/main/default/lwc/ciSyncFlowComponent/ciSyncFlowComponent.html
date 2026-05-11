@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <template if:true={showSpinner}>
+            <div class="slds-p-around_medium slds-align_absolute-center">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                <p class="slds-m-left_medium">{spinnerMessage}</p>
+            </div>
+        </template>
+        <template if:true={hasError}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                Unable to connect to Data Cloud
+            </div>
+        </template>
+        <template if:true={fetchInsightSuccess}>
+            <div class="slds-p-around_medium slds-text-color_success slds-text-heading_small slds-text-align_center">
+                All the Calculated Insights metadata has been synced successfully
+            </div>
+            <div class="slds-p-around_medium slds-text-color_success slds-text-heading_small slds-text-align_center">
+                Please proceed to Calculated Insights tab to configure data sync
+            </div>
+        </template>
+    </lightning-card>
+</template>

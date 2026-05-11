@@ -1,0 +1,6583 @@
+{
+  "metadata": [
+    {
+      "name": "SAAverageInteractionsPerArticle__cio",
+      "displayName": "Average Interactions per Article",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "AverageNumberOfInteractions__c",
+          "displayName": "Average Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAAverageInteractionsPerArticle__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAAverageInteractionsPerArticle__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:11:10.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:10.00000Z"
+    },
+    {
+      "name": "SAAvgInteractionsPerTypeRange__cio",
+      "displayName": "Avg Interactions per Type in Range",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "AverageNumberOfInteractions__c",
+          "displayName": "Average Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAAvgInteractionsPerTypeRange__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAAvgInteractionsPerTypeRange__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:11:12.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:12.00000Z"
+    },
+    {
+      "name": "RegistrationByProd__cio",
+      "displayName": "RegistrationByProd",
+      "dimensions": [
+        {
+          "name": "product_name__c",
+          "displayName": "Product Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "product_count__c",
+          "displayName": "Product Count",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Warranty_Registration_dm__dlm",
+          "toEntity": "RegistrationByProd__cio"
+        },
+        {
+          "fromEntity": "ssot__Product__dlm",
+          "toEntity": "RegistrationByProd__cio"
+        }
+      ],
+      "partitionBy": "product_name__c",
+      "latestProcessTime": "2023-11-24T06:52:45.00000Z",
+      "latestSuccessfulProcessTime": "2023-11-24T06:52:45.00000Z"
+    },
+    {
+      "name": "DiagnosticHours__cio",
+      "displayName": "DiagnosticHours",
+      "dimensions": [
+        {
+          "name": "ClaimId__c",
+          "displayName": "ClaimId",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalApprovedDiagHrs__c",
+          "displayName": "TotalApprovedDiagHrs",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_Service_Info__dlm",
+          "toEntity": "DiagnosticHours__cio"
+        },
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "DiagnosticHours__cio"
+        }
+      ],
+      "partitionBy": "ClaimId__c",
+      "latestProcessTime": "2024-01-10T14:13:37.00000Z",
+      "latestSuccessfulProcessTime": "2024-01-10T14:13:37.00000Z"
+    },
+    {
+      "name": "InstPartPerClaim__cio",
+      "displayName": "InstPartPerClaim",
+      "dimensions": [
+        {
+          "name": "claimid__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "installed_part__c",
+          "displayName": "Installed Part",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "prodcount__c",
+          "displayName": "ProdCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "InstPartPerClaim__cio"
+        },
+        {
+          "fromEntity": "TWOD_Claim_Part_dm__dlm",
+          "toEntity": "InstPartPerClaim__cio"
+        },
+        {
+          "fromEntity": "ssot__Product__dlm",
+          "toEntity": "InstPartPerClaim__cio"
+        }
+      ],
+      "partitionBy": "installed_part__c",
+      "latestProcessTime": "2024-03-04T09:53:02.00000Z",
+      "latestSuccessfulProcessTime": "2024-03-04T09:53:02.00000Z"
+    },
+    {
+      "name": "LaborHours__cio",
+      "displayName": "LaborHours",
+      "dimensions": [
+        {
+          "name": "ClaimId__c",
+          "displayName": "ClaimId",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalApprovedLaborHrs__c",
+          "displayName": "TotalApprovedLaborHrs",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_Service_Info__dlm",
+          "toEntity": "LaborHours__cio"
+        },
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "LaborHours__cio"
+        }
+      ],
+      "partitionBy": "ClaimId__c",
+      "latestProcessTime": "2024-01-11T09:14:55.00000Z",
+      "latestSuccessfulProcessTime": "2024-01-11T09:14:55.00000Z"
+    },
+    {
+      "name": "GetWarrantyCluster__cio",
+      "displayName": "GetWarrantyCluster",
+      "dimensions": [
+        {
+          "name": "ClusterNumber__c",
+          "displayName": "ClusterNumber",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "BaseModel__c",
+          "displayName": "BaseModel",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InstallmentPart__c",
+          "displayName": "InstallmentPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "CasualPart__c",
+          "displayName": "CasualPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClaimCount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "AvgLaborHour__c",
+          "displayName": "AvgLaborHour",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "AvgDigHour__c",
+          "displayName": "AvgDigHour",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "stddev__c",
+          "displayName": "stddev",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "WarrantyClusterPerInstPart__cio",
+          "toEntity": "GetWarrantyCluster__cio"
+        }
+      ],
+      "latestProcessTime": "2024-03-07T11:20:11.00000Z",
+      "latestSuccessfulProcessTime": "2024-03-07T11:20:11.00000Z"
+    },
+    {
+      "name": "ClaimParts__cio",
+      "displayName": "ClaimParts",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "pdesc__c",
+          "displayName": "pdesc",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ProdCount__c",
+          "displayName": "ProdCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimParts__cio"
+        },
+        {
+          "fromEntity": "TWOD_Claim_Part_dm__dlm",
+          "toEntity": "ClaimParts__cio"
+        },
+        {
+          "fromEntity": "ssot__Product__dlm",
+          "toEntity": "ClaimParts__cio"
+        }
+      ],
+      "partitionBy": "pdesc__c",
+      "latestProcessTime": "2024-06-04T23:00:17.33300Z",
+      "latestSuccessfulProcessTime": "2024-06-04T23:00:17.33300Z"
+    },
+    {
+      "name": "ClaimFinancialsV1__cio",
+      "displayName": "ClaimFinancialsV1",
+      "dimensions": [
+        {
+          "name": "claim_number__c",
+          "displayName": "Claim Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_amount__c",
+          "displayName": "Claim Amount",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "submit_date__c",
+          "displayName": "Submit Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "claim_status__c",
+          "displayName": "Claim Status",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "analyst_name__c",
+          "displayName": "Analyst Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_created_date__c",
+          "displayName": "Claim Created Date",
+          "type": "DATE_TIME",
+          "businessType": "DATE_TIME"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio"
+        },
+        {
+          "fromEntity": "TWOD_Financial_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio"
+        },
+        {
+          "fromEntity": "TWOD_User__dlm",
+          "toEntity": "ClaimFinancialsV1__cio"
+        }
+      ],
+      "partitionBy": "claim_created_date__c",
+      "latestProcessTime": "2024-02-24T19:30:02.36200Z",
+      "latestSuccessfulProcessTime": "2024-02-24T19:30:02.36200Z"
+    },
+    {
+      "name": "ClaimFinancialsV1__cio_HOUR",
+      "displayName": "ClaimFinancialsV1_HOUR",
+      "dimensions": [
+        {
+          "name": "claim_number__c",
+          "displayName": "Claim Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_amount__c",
+          "displayName": "Claim Amount",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "submit_date__c",
+          "displayName": "Submit Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "claim_status__c",
+          "displayName": "Claim Status",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "analyst_name__c",
+          "displayName": "Analyst Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_created_date__c",
+          "displayName": "Claim Created Date",
+          "type": "DATE_TIME",
+          "businessType": "DATE_TIME"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_HOUR"
+        },
+        {
+          "fromEntity": "TWOD_Financial_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_HOUR"
+        },
+        {
+          "fromEntity": "TWOD_User__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_HOUR"
+        }
+      ],
+      "partitionBy": "claim_created_date__c"
+    },
+    {
+      "name": "ClaimFinancialsV1__cio_DAY",
+      "displayName": "ClaimFinancialsV1_DAY",
+      "dimensions": [
+        {
+          "name": "claim_number__c",
+          "displayName": "Claim Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_amount__c",
+          "displayName": "Claim Amount",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "submit_date__c",
+          "displayName": "Submit Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "claim_status__c",
+          "displayName": "Claim Status",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "analyst_name__c",
+          "displayName": "Analyst Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_created_date__c",
+          "displayName": "Claim Created Date",
+          "type": "DATE_TIME",
+          "businessType": "DATE_TIME"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_DAY"
+        },
+        {
+          "fromEntity": "TWOD_Financial_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_DAY"
+        },
+        {
+          "fromEntity": "TWOD_User__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_DAY"
+        }
+      ],
+      "partitionBy": "claim_created_date__c"
+    },
+    {
+      "name": "ClaimFinancialsV1__cio_MONTH",
+      "displayName": "ClaimFinancialsV1_MONTH",
+      "dimensions": [
+        {
+          "name": "claim_number__c",
+          "displayName": "Claim Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_amount__c",
+          "displayName": "Claim Amount",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "submit_date__c",
+          "displayName": "Submit Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "claim_status__c",
+          "displayName": "Claim Status",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "analyst_name__c",
+          "displayName": "Analyst Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_created_date__c",
+          "displayName": "Claim Created Date",
+          "type": "DATE_TIME",
+          "businessType": "DATE_TIME"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_MONTH"
+        },
+        {
+          "fromEntity": "TWOD_Financial_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_MONTH"
+        },
+        {
+          "fromEntity": "TWOD_User__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_MONTH"
+        }
+      ],
+      "partitionBy": "claim_created_date__c"
+    },
+    {
+      "name": "ClaimFinancialsV1__cio_QUARTER",
+      "displayName": "ClaimFinancialsV1_QUARTER",
+      "dimensions": [
+        {
+          "name": "claim_number__c",
+          "displayName": "Claim Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_amount__c",
+          "displayName": "Claim Amount",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "submit_date__c",
+          "displayName": "Submit Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "claim_status__c",
+          "displayName": "Claim Status",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "analyst_name__c",
+          "displayName": "Analyst Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_created_date__c",
+          "displayName": "Claim Created Date",
+          "type": "DATE_TIME",
+          "businessType": "DATE_TIME"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_QUARTER"
+        },
+        {
+          "fromEntity": "TWOD_Financial_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_QUARTER"
+        },
+        {
+          "fromEntity": "TWOD_User__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "claim_created_date__c"
+    },
+    {
+      "name": "ClaimFinancialsV1__cio_YEAR",
+      "displayName": "ClaimFinancialsV1_YEAR",
+      "dimensions": [
+        {
+          "name": "claim_number__c",
+          "displayName": "Claim Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_amount__c",
+          "displayName": "Claim Amount",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "submit_date__c",
+          "displayName": "Submit Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "claim_status__c",
+          "displayName": "Claim Status",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "analyst_name__c",
+          "displayName": "Analyst Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_created_date__c",
+          "displayName": "Claim Created Date",
+          "type": "DATE_TIME",
+          "businessType": "DATE_TIME"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "UNSPECIFIED"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_YEAR"
+        },
+        {
+          "fromEntity": "TWOD_Financial_dm__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_YEAR"
+        },
+        {
+          "fromEntity": "TWOD_User__dlm",
+          "toEntity": "ClaimFinancialsV1__cio_YEAR"
+        }
+      ],
+      "partitionBy": "claim_created_date__c"
+    },
+    {
+      "name": "SADailyImpressionsPerUser__cio",
+      "displayName": "Daily Impressions per User",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ImpressionsPerUser__c",
+          "displayName": "Impressions per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyImpressionsPerUser__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:11:23.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:23.00000Z"
+    },
+    {
+      "name": "SADailyImpressionsPerUser__cio_HOUR",
+      "displayName": "Daily Impressions per User_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ImpressionsPerUser__c",
+          "displayName": "Impressions per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyImpressionsPerUser__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyImpressionsPerUser__cio_DAY",
+      "displayName": "Daily Impressions per User_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ImpressionsPerUser__c",
+          "displayName": "Impressions per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyImpressionsPerUser__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyImpressionsPerUser__cio_MONTH",
+      "displayName": "Daily Impressions per User_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ImpressionsPerUser__c",
+          "displayName": "Impressions per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyImpressionsPerUser__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyImpressionsPerUser__cio_QUARTER",
+      "displayName": "Daily Impressions per User_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ImpressionsPerUser__c",
+          "displayName": "Impressions per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyImpressionsPerUser__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyImpressionsPerUser__cio_YEAR",
+      "displayName": "Daily Impressions per User_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ImpressionsPerUser__c",
+          "displayName": "Impressions per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyImpressionsPerUser__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyArticleSearchPerFeature__cio",
+      "displayName": "Daily Article Search per Feature",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleSearchPerFeature__cio"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c",
+      "latestProcessTime": "2025-06-17T10:11:15.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:15.00000Z"
+    },
+    {
+      "name": "SADailyArticleSearchPerFeature__cio_HOUR",
+      "displayName": "Daily Article Search per Feature_HOUR",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleSearchPerFeature__cio_HOUR"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleSearchPerFeature__cio_DAY",
+      "displayName": "Daily Article Search per Feature_DAY",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleSearchPerFeature__cio_DAY"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleSearchPerFeature__cio_MONTH",
+      "displayName": "Daily Article Search per Feature_MONTH",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleSearchPerFeature__cio_MONTH"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleSearchPerFeature__cio_QUARTER",
+      "displayName": "Daily Article Search per Feature_QUARTER",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleSearchPerFeature__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleSearchPerFeature__cio_YEAR",
+      "displayName": "Daily Article Search per Feature_YEAR",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleSearchPerFeature__cio_YEAR"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SANumberOfDailyQueriesPerPlatform__cio",
+      "displayName": "Number of Daily Queries per Platform",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentOfQueries__c",
+          "displayName": "Percent of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:10:23.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:23.00000Z"
+    },
+    {
+      "name": "SANumberOfDailyQueriesPerPlatform__cio_HOUR",
+      "displayName": "Number of Daily Queries per Platform_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentOfQueries__c",
+          "displayName": "Percent of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_HOUR"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SANumberOfDailyQueriesPerPlatform__cio_DAY",
+      "displayName": "Number of Daily Queries per Platform_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentOfQueries__c",
+          "displayName": "Percent of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_DAY"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SANumberOfDailyQueriesPerPlatform__cio_MONTH",
+      "displayName": "Number of Daily Queries per Platform_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentOfQueries__c",
+          "displayName": "Percent of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_MONTH"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SANumberOfDailyQueriesPerPlatform__cio_QUARTER",
+      "displayName": "Number of Daily Queries per Platform_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentOfQueries__c",
+          "displayName": "Percent of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SANumberOfDailyQueriesPerPlatform__cio_YEAR",
+      "displayName": "Number of Daily Queries per Platform_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentOfQueries__c",
+          "displayName": "Percent of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_YEAR"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SANumberOfDailyQueriesPerPlatform__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersPrecision__cio",
+      "displayName": "Search Answers Precision",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Precision__c",
+          "displayName": "Precision",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersPrecision__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:10:15.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:15.00000Z"
+    },
+    {
+      "name": "SASearchAnswersPrecision__cio_HOUR",
+      "displayName": "Search Answers Precision_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Precision__c",
+          "displayName": "Precision",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersPrecision__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersPrecision__cio_DAY",
+      "displayName": "Search Answers Precision_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Precision__c",
+          "displayName": "Precision",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersPrecision__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersPrecision__cio_MONTH",
+      "displayName": "Search Answers Precision_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Precision__c",
+          "displayName": "Precision",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersPrecision__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersPrecision__cio_QUARTER",
+      "displayName": "Search Answers Precision_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Precision__c",
+          "displayName": "Precision",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersPrecision__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersPrecision__cio_YEAR",
+      "displayName": "Search Answers Precision_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Precision__c",
+          "displayName": "Precision",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersPrecision__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "Contacts_in_Unified_Account__cio",
+      "displayName": "Contacts in Unified Account",
+      "dimensions": [
+        {
+          "name": "unified_account__c",
+          "displayName": "Unified Account",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "no_of_contacts__c",
+          "displayName": "No Of Contacts",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "UnifiedssotAccountAccd__dlm",
+          "toEntity": "Contacts_in_Unified_Account__cio"
+        },
+        {
+          "fromEntity": "UnifiedLinkssotAccountAccd__dlm",
+          "toEntity": "Contacts_in_Unified_Account__cio"
+        },
+        {
+          "fromEntity": "ssot__Account__dlm",
+          "toEntity": "Contacts_in_Unified_Account__cio"
+        },
+        {
+          "fromEntity": "ssot__AccountContact__dlm",
+          "toEntity": "Contacts_in_Unified_Account__cio"
+        }
+      ],
+      "partitionBy": "unified_account__c",
+      "latestProcessTime": "2025-06-09T18:22:41.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-09T18:22:41.00000Z"
+    },
+    {
+      "name": "SADailyQueriesPerUser__cio",
+      "displayName": "Daily Queries per User",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "QueriesPerUser__c",
+          "displayName": "Queries per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyQueriesPerUser__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:11:04.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:04.00000Z"
+    },
+    {
+      "name": "SADailyQueriesPerUser__cio_HOUR",
+      "displayName": "Daily Queries per User_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "QueriesPerUser__c",
+          "displayName": "Queries per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyQueriesPerUser__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyQueriesPerUser__cio_DAY",
+      "displayName": "Daily Queries per User_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "QueriesPerUser__c",
+          "displayName": "Queries per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyQueriesPerUser__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyQueriesPerUser__cio_MONTH",
+      "displayName": "Daily Queries per User_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "QueriesPerUser__c",
+          "displayName": "Queries per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyQueriesPerUser__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyQueriesPerUser__cio_QUARTER",
+      "displayName": "Daily Queries per User_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "QueriesPerUser__c",
+          "displayName": "Queries per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyQueriesPerUser__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyQueriesPerUser__cio_YEAR",
+      "displayName": "Daily Queries per User_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "QueriesPerUser__c",
+          "displayName": "Queries per User",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyQueriesPerUser__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAInteractionsPerArticle__cio",
+      "displayName": "Interactions per Article",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerArticle__cio"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerArticle__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:10:49.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:49.00000Z"
+    },
+    {
+      "name": "SAInteractionsPerQuery__cio",
+      "displayName": "Interactions per Query",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAInteractionsPerQuery__cio"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerQuery__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerQuery__cio"
+        }
+      ],
+      "partitionBy": "QueryText__c",
+      "latestProcessTime": "2025-06-17T10:09:06.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:06.00000Z"
+    },
+    {
+      "name": "SAMRRByArticlePerPlatformRange__cio",
+      "displayName": "MRR by Article per Platform in Range",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "MeanReciprocalRank__c",
+          "displayName": "Mean Reciprocal Rank",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAMRRByArticlePerPlatformRange__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAMRRByArticlePerPlatformRange__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:10:30.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:30.00000Z"
+    },
+    {
+      "name": "SAQueryResultInsights__cio",
+      "displayName": "Query Result Insights",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueriesWithNoResults__c",
+          "displayName": "Number of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesWithResults__c",
+          "displayName": "Number of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithNoResults__c",
+          "displayName": "Percentage of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithResults__c",
+          "displayName": "Percentage of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAQueryResultInsights__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:10:36.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:36.00000Z"
+    },
+    {
+      "name": "SAQueryResultInsights__cio_HOUR",
+      "displayName": "Query Result Insights_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueriesWithNoResults__c",
+          "displayName": "Number of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesWithResults__c",
+          "displayName": "Number of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithNoResults__c",
+          "displayName": "Percentage of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithResults__c",
+          "displayName": "Percentage of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAQueryResultInsights__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryResultInsights__cio_DAY",
+      "displayName": "Query Result Insights_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueriesWithNoResults__c",
+          "displayName": "Number of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesWithResults__c",
+          "displayName": "Number of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithNoResults__c",
+          "displayName": "Percentage of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithResults__c",
+          "displayName": "Percentage of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAQueryResultInsights__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryResultInsights__cio_MONTH",
+      "displayName": "Query Result Insights_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueriesWithNoResults__c",
+          "displayName": "Number of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesWithResults__c",
+          "displayName": "Number of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithNoResults__c",
+          "displayName": "Percentage of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithResults__c",
+          "displayName": "Percentage of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAQueryResultInsights__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryResultInsights__cio_QUARTER",
+      "displayName": "Query Result Insights_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueriesWithNoResults__c",
+          "displayName": "Number of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesWithResults__c",
+          "displayName": "Number of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithNoResults__c",
+          "displayName": "Percentage of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithResults__c",
+          "displayName": "Percentage of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAQueryResultInsights__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryResultInsights__cio_YEAR",
+      "displayName": "Query Result Insights_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueriesWithNoResults__c",
+          "displayName": "Number of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesWithResults__c",
+          "displayName": "Number of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithNoResults__c",
+          "displayName": "Percentage of Queries with No Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesWithResults__c",
+          "displayName": "Percentage of Queries with Results",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAQueryResultInsights__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersFrequency__cio",
+      "displayName": "Search Answers Frequency",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersFrequency__cio"
+        }
+      ],
+      "partitionBy": "Query__c",
+      "latestProcessTime": "2025-06-17T10:10:44.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:44.00000Z"
+    },
+    {
+      "name": "SAMostSearchedQueries__cio",
+      "displayName": "Most Searched Queries",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SAMostSearchedQueries__cio"
+        }
+      ],
+      "partitionBy": "QueryText__c",
+      "latestProcessTime": "2025-06-17T10:09:34.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:34.00000Z"
+    },
+    {
+      "name": "SAMRRByArticlePerPlatform__cio",
+      "displayName": "MRR by Article per Platform",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Platform__c",
+          "displayName": "Platform",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "MeanReciprocalRank__c",
+          "displayName": "Mean Reciprocal Rank",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAMRRByArticlePerPlatform__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAMRRByArticlePerPlatform__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:11:27.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:27.00000Z"
+    },
+    {
+      "name": "SASearchAnswersCoverage__cio",
+      "displayName": "Search Answers Coverage",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Coverage__c",
+          "displayName": "Coverage",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SASearchAnswersCoverage__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersCoverage__cio"
+        },
+        {
+          "fromEntity": "SubQuery3",
+          "toEntity": "SASearchAnswersCoverage__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:11:17.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:17.00000Z"
+    },
+    {
+      "name": "SASearchAnswersCoverage__cio_HOUR",
+      "displayName": "Search Answers Coverage_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Coverage__c",
+          "displayName": "Coverage",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SASearchAnswersCoverage__cio_HOUR"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersCoverage__cio_HOUR"
+        },
+        {
+          "fromEntity": "SubQuery3",
+          "toEntity": "SASearchAnswersCoverage__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersCoverage__cio_DAY",
+      "displayName": "Search Answers Coverage_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Coverage__c",
+          "displayName": "Coverage",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SASearchAnswersCoverage__cio_DAY"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersCoverage__cio_DAY"
+        },
+        {
+          "fromEntity": "SubQuery3",
+          "toEntity": "SASearchAnswersCoverage__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersCoverage__cio_MONTH",
+      "displayName": "Search Answers Coverage_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Coverage__c",
+          "displayName": "Coverage",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SASearchAnswersCoverage__cio_MONTH"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersCoverage__cio_MONTH"
+        },
+        {
+          "fromEntity": "SubQuery3",
+          "toEntity": "SASearchAnswersCoverage__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersCoverage__cio_QUARTER",
+      "displayName": "Search Answers Coverage_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Coverage__c",
+          "displayName": "Coverage",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SASearchAnswersCoverage__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersCoverage__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SubQuery3",
+          "toEntity": "SASearchAnswersCoverage__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersCoverage__cio_YEAR",
+      "displayName": "Search Answers Coverage_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Coverage__c",
+          "displayName": "Coverage",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SASearchAnswersCoverage__cio_YEAR"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersCoverage__cio_YEAR"
+        },
+        {
+          "fromEntity": "SubQuery3",
+          "toEntity": "SASearchAnswersCoverage__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "Accounts_with_Unified_Details__cio",
+      "displayName": "Accounts with Unified Details",
+      "dimensions": [
+        {
+          "name": "id__c",
+          "displayName": "Id",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "name__c",
+          "displayName": "Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "source__c",
+          "displayName": "Source",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "source_object__c",
+          "displayName": "Source Object",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "unified_id__c",
+          "displayName": "Unified Id",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "unified_name__c",
+          "displayName": "Unified Name",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "number__c",
+          "displayName": "Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "unified_number__c",
+          "displayName": "Unified Number",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "type__c",
+          "displayName": "Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "unified_type__c",
+          "displayName": "Unified Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "dummy__c",
+          "displayName": "Dummy",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "UnifiedLinkssotAccountAccd__dlm",
+          "toEntity": "Accounts_with_Unified_Details__cio"
+        },
+        {
+          "fromEntity": "ssot__Account__dlm",
+          "toEntity": "Accounts_with_Unified_Details__cio"
+        },
+        {
+          "fromEntity": "UnifiedssotAccountAccd__dlm",
+          "toEntity": "Accounts_with_Unified_Details__cio"
+        }
+      ],
+      "partitionBy": "name__c",
+      "latestProcessTime": "2025-06-12T11:23:53.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-12T11:23:53.00000Z"
+    },
+    {
+      "name": "Unifed_Accounts_linked_to_More_than_1__cio",
+      "displayName": "Unifed Accounts linked to More than 1",
+      "dimensions": [
+        {
+          "name": "unified_account__c",
+          "displayName": "unified_account__c",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "accounts__c",
+          "displayName": "accounts__c",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "UnifiedLinkssotAccountAccd__dlm",
+          "toEntity": "Unifed_Accounts_linked_to_More_than_1__cio"
+        }
+      ],
+      "partitionBy": "unified_account__c",
+      "latestProcessTime": "2025-06-06T10:48:48.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-06T10:48:48.00000Z"
+    },
+    {
+      "name": "Source_More_Than_One__cio",
+      "displayName": "Source More Than One",
+      "dimensions": [
+        {
+          "name": "unified_account__c",
+          "displayName": "Unified Account",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "source_count__c",
+          "displayName": "Source Count",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "UnifiedLinkssotAccountAccd__dlm",
+          "toEntity": "Source_More_Than_One__cio"
+        }
+      ],
+      "partitionBy": "unified_account__c",
+      "latestProcessTime": "1970-01-01T00:00:00.00000Z",
+      "latestSuccessfulProcessTime": "1970-01-01T00:00:00.00000Z"
+    },
+    {
+      "name": "WarrantyClusterPerInstPart__cio",
+      "displayName": "WarrantyClusterPerInstPart",
+      "dimensions": [
+        {
+          "name": "inst_parts__c",
+          "displayName": "INST_Parts",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "claim_number__c",
+          "displayName": "CLAIM_NUMBER",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "totapprovedlaborhrs__c",
+          "displayName": "TotApprovedLaborHrs",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "base_model__c",
+          "displayName": "BASE_MODEL",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "causal_part_desc__c",
+          "displayName": "CAUSAL_PART_DESC",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "totapproveddiaghrs__c",
+          "displayName": "TotApprovedDiagHrs",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "causal_part__c",
+          "displayName": "CAUSAL_PART",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "claimcount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "WarrantyClusterPerInstPart__cio"
+        },
+        {
+          "fromEntity": "ssot__Product__dlm",
+          "toEntity": "WarrantyClusterPerInstPart__cio"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "WarrantyClusterPerInstPart__cio"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "WarrantyClusterPerInstPart__cio"
+        },
+        {
+          "fromEntity": "DiagnosticHours__cio",
+          "toEntity": "WarrantyClusterPerInstPart__cio"
+        }
+      ],
+      "latestProcessTime": "2024-01-12T07:56:18.00000Z",
+      "latestSuccessfulProcessTime": "2024-01-12T07:56:18.00000Z"
+    },
+    {
+      "name": "ClaimInputModel__cio",
+      "displayName": "ClaimInputModel",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "StartDate__c",
+          "displayName": "StartDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "EndDate__c",
+          "displayName": "EndDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "DateofRepair__c",
+          "displayName": "DateofRepair",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InstPart__c",
+          "displayName": "InstPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Amt__c",
+          "displayName": "Amt",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "RequestedLabHour__c",
+          "displayName": "RequestedLabHour",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "ClaimStatus__c",
+          "displayName": "ClaimStatus",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClmCount__c",
+          "displayName": "ClmCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimInputModel__cio"
+        },
+        {
+          "fromEntity": "TWOD_Inventory_dm__dlm",
+          "toEntity": "ClaimInputModel__cio"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "ClaimInputModel__cio"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "ClaimInputModel__cio"
+        }
+      ],
+      "latestProcessTime": "2024-06-30T20:03:05.00000Z",
+      "latestSuccessfulProcessTime": "2024-06-30T20:03:05.00000Z"
+    },
+    {
+      "name": "ClaimInputModel__cio_HOUR",
+      "displayName": "ClaimInputModel_HOUR",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "StartDate__c",
+          "displayName": "StartDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "EndDate__c",
+          "displayName": "EndDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "DateofRepair__c",
+          "displayName": "DateofRepair",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InstPart__c",
+          "displayName": "InstPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Amt__c",
+          "displayName": "Amt",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "RequestedLabHour__c",
+          "displayName": "RequestedLabHour",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "ClaimStatus__c",
+          "displayName": "ClaimStatus",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClmCount__c",
+          "displayName": "ClmCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_HOUR"
+        },
+        {
+          "fromEntity": "TWOD_Inventory_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_HOUR"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_HOUR"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "ClaimInputModel__cio_HOUR"
+        }
+      ]
+    },
+    {
+      "name": "ClaimInputModel__cio_DAY",
+      "displayName": "ClaimInputModel_DAY",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "StartDate__c",
+          "displayName": "StartDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "EndDate__c",
+          "displayName": "EndDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "DateofRepair__c",
+          "displayName": "DateofRepair",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InstPart__c",
+          "displayName": "InstPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Amt__c",
+          "displayName": "Amt",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "RequestedLabHour__c",
+          "displayName": "RequestedLabHour",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "ClaimStatus__c",
+          "displayName": "ClaimStatus",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClmCount__c",
+          "displayName": "ClmCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_DAY"
+        },
+        {
+          "fromEntity": "TWOD_Inventory_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_DAY"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_DAY"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "ClaimInputModel__cio_DAY"
+        }
+      ]
+    },
+    {
+      "name": "ClaimInputModel__cio_MONTH",
+      "displayName": "ClaimInputModel_MONTH",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "StartDate__c",
+          "displayName": "StartDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "EndDate__c",
+          "displayName": "EndDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "DateofRepair__c",
+          "displayName": "DateofRepair",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InstPart__c",
+          "displayName": "InstPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Amt__c",
+          "displayName": "Amt",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "RequestedLabHour__c",
+          "displayName": "RequestedLabHour",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "ClaimStatus__c",
+          "displayName": "ClaimStatus",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClmCount__c",
+          "displayName": "ClmCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_MONTH"
+        },
+        {
+          "fromEntity": "TWOD_Inventory_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_MONTH"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_MONTH"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "ClaimInputModel__cio_MONTH"
+        }
+      ]
+    },
+    {
+      "name": "ClaimInputModel__cio_QUARTER",
+      "displayName": "ClaimInputModel_QUARTER",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "StartDate__c",
+          "displayName": "StartDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "EndDate__c",
+          "displayName": "EndDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "DateofRepair__c",
+          "displayName": "DateofRepair",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InstPart__c",
+          "displayName": "InstPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Amt__c",
+          "displayName": "Amt",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "RequestedLabHour__c",
+          "displayName": "RequestedLabHour",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "ClaimStatus__c",
+          "displayName": "ClaimStatus",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClmCount__c",
+          "displayName": "ClmCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_QUARTER"
+        },
+        {
+          "fromEntity": "TWOD_Inventory_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_QUARTER"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_QUARTER"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "ClaimInputModel__cio_QUARTER"
+        }
+      ]
+    },
+    {
+      "name": "ClaimInputModel__cio_YEAR",
+      "displayName": "ClaimInputModel_YEAR",
+      "dimensions": [
+        {
+          "name": "ClaimID__c",
+          "displayName": "ClaimID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "StartDate__c",
+          "displayName": "StartDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "EndDate__c",
+          "displayName": "EndDate",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "DateofRepair__c",
+          "displayName": "DateofRepair",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InstPart__c",
+          "displayName": "InstPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Amt__c",
+          "displayName": "Amt",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "RequestedLabHour__c",
+          "displayName": "RequestedLabHour",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "ClaimStatus__c",
+          "displayName": "ClaimStatus",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClmCount__c",
+          "displayName": "ClmCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "TWOD_Claim_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_YEAR"
+        },
+        {
+          "fromEntity": "TWOD_Inventory_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_YEAR"
+        },
+        {
+          "fromEntity": "TWOD_InstalledPart_dm__dlm",
+          "toEntity": "ClaimInputModel__cio_YEAR"
+        },
+        {
+          "fromEntity": "LaborHours__cio",
+          "toEntity": "ClaimInputModel__cio_YEAR"
+        }
+      ]
+    },
+    {
+      "name": "ClaimStandardDeviation__cio",
+      "displayName": "ClaimStandardDeviation",
+      "dimensions": [
+        {
+          "name": "BaseModel__c",
+          "displayName": "BaseModel",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InstallmentPart__c",
+          "displayName": "InstallmentPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "CasualPart__c",
+          "displayName": "CasualPart",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "ClaimCount__c",
+          "displayName": "ClaimCount",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "AvgLaborHour__c",
+          "displayName": "AvgLaborHour",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "AvgDigHour__c",
+          "displayName": "AvgDigHour",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "stddev__c",
+          "displayName": "stddev",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "WarrantyClusterPerInstPart__cio",
+          "toEntity": "ClaimStandardDeviation__cio"
+        }
+      ],
+      "latestProcessTime": "2024-06-01T18:32:02.00000Z",
+      "latestSuccessfulProcessTime": "2024-06-01T18:32:02.00000Z"
+    },
+    {
+      "name": "SAAverageInteractionForAllArticles__cio",
+      "displayName": "Average Interactions for All Articles",
+      "dimensions": [],
+      "measures": [
+        {
+          "name": "AverageInteractionsPerArticle__c",
+          "displayName": "Average Interactions per Article",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAAverageInteractionForAllArticles__cio"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAAverageInteractionForAllArticles__cio"
+        }
+      ],
+      "latestProcessTime": "2025-06-17T10:11:31.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:31.00000Z"
+    },
+    {
+      "name": "SADailyInteractionsPerArticle__cio",
+      "displayName": "Daily Interactions per Article",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:10:19.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:19.00000Z"
+    },
+    {
+      "name": "SADailyInteractionsPerArticle__cio_HOUR",
+      "displayName": "Daily Interactions per Article_HOUR",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_HOUR"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_HOUR"
+        }
+      ],
+      "partitionBy": "ArticleId__c"
+    },
+    {
+      "name": "SADailyInteractionsPerArticle__cio_DAY",
+      "displayName": "Daily Interactions per Article_DAY",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_DAY"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_DAY"
+        }
+      ],
+      "partitionBy": "ArticleId__c"
+    },
+    {
+      "name": "SADailyInteractionsPerArticle__cio_MONTH",
+      "displayName": "Daily Interactions per Article_MONTH",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_MONTH"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_MONTH"
+        }
+      ],
+      "partitionBy": "ArticleId__c"
+    },
+    {
+      "name": "SADailyInteractionsPerArticle__cio_QUARTER",
+      "displayName": "Daily Interactions per Article_QUARTER",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "ArticleId__c"
+    },
+    {
+      "name": "SADailyInteractionsPerArticle__cio_YEAR",
+      "displayName": "Daily Interactions per Article_YEAR",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_YEAR"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerArticle__cio_YEAR"
+        }
+      ],
+      "partitionBy": "ArticleId__c"
+    },
+    {
+      "name": "SAMeanReciprocalRankByArticle__cio",
+      "displayName": "Mean Reciprocal Rank by Article",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "MeanReciprocalRank__c",
+          "displayName": "Mean Reciprocal Rank",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAMeanReciprocalRankByArticle__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAMeanReciprocalRankByArticle__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:10:51.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:51.00000Z"
+    },
+    {
+      "name": "SAQueryInteractionInsights__cio",
+      "displayName": "Query Interaction Insights",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries on this day",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesInteracted__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesInteracted__c",
+          "displayName": "Percentage of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAQueryInteractionInsights__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAQueryInteractionInsights__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:09:54.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:54.00000Z"
+    },
+    {
+      "name": "SAQueryInteractionInsights__cio_HOUR",
+      "displayName": "Query Interaction Insights_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries on this day",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesInteracted__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesInteracted__c",
+          "displayName": "Percentage of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAQueryInteractionInsights__cio_HOUR"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAQueryInteractionInsights__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryInteractionInsights__cio_DAY",
+      "displayName": "Query Interaction Insights_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries on this day",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesInteracted__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesInteracted__c",
+          "displayName": "Percentage of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAQueryInteractionInsights__cio_DAY"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAQueryInteractionInsights__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryInteractionInsights__cio_MONTH",
+      "displayName": "Query Interaction Insights_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries on this day",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesInteracted__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesInteracted__c",
+          "displayName": "Percentage of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAQueryInteractionInsights__cio_MONTH"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAQueryInteractionInsights__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryInteractionInsights__cio_QUARTER",
+      "displayName": "Query Interaction Insights_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries on this day",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesInteracted__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesInteracted__c",
+          "displayName": "Percentage of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAQueryInteractionInsights__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAQueryInteractionInsights__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueryInteractionInsights__cio_YEAR",
+      "displayName": "Query Interaction Insights_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries on this day",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueriesInteracted__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentageOfQueriesInteracted__c",
+          "displayName": "Percentage of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAQueryInteractionInsights__cio_YEAR"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAQueryInteractionInsights__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAAverageInteractionsRange__cio",
+      "displayName": "Avg Interactions in Range",
+      "dimensions": [],
+      "measures": [
+        {
+          "name": "AverageInteractionsPerArticle__c",
+          "displayName": "Average Interactions per Article",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAAverageInteractionsRange__cio"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAAverageInteractionsRange__cio"
+        }
+      ],
+      "latestProcessTime": "2025-06-17T10:10:40.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:40.00000Z"
+    },
+    {
+      "name": "SAAvgInteractionsByTypePerArticle__cio",
+      "displayName": "Average Interactions by Type per Article",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "AverageNumberOfInteractions__c",
+          "displayName": "Average Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAAvgInteractionsByTypePerArticle__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAAvgInteractionsByTypePerArticle__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:10:12.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:12.00000Z"
+    },
+    {
+      "name": "SADailyArticleInteractionPerFeature__cio",
+      "displayName": "Daily Article Interaction per Feature",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c",
+      "latestProcessTime": "2025-06-17T10:10:27.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:27.00000Z"
+    },
+    {
+      "name": "SADailyArticleInteractionPerFeature__cio_HOUR",
+      "displayName": "Daily Article Interaction per Feature_HOUR",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_HOUR"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_HOUR"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleInteractionPerFeature__cio_DAY",
+      "displayName": "Daily Article Interaction per Feature_DAY",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_DAY"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_DAY"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleInteractionPerFeature__cio_MONTH",
+      "displayName": "Daily Article Interaction per Feature_MONTH",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_MONTH"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_MONTH"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleInteractionPerFeature__cio_QUARTER",
+      "displayName": "Daily Article Interaction per Feature_QUARTER",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SADailyArticleInteractionPerFeature__cio_YEAR",
+      "displayName": "Daily Article Interaction per Feature_YEAR",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_YEAR"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyArticleInteractionPerFeature__cio_YEAR"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c"
+    },
+    {
+      "name": "SAMeanReciprocalRankByArticleRange__cio",
+      "displayName": "Mean Reciprocal Rank by Article in Range",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "MeanReciprocalRank__c",
+          "displayName": "Mean Reciprocal Rank",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery1",
+          "toEntity": "SAMeanReciprocalRankByArticleRange__cio"
+        },
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SAMeanReciprocalRankByArticleRange__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:10:59.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:59.00000Z"
+    },
+    {
+      "name": "SASearchAnswersDailyFrequency__cio",
+      "displayName": "Search Answers Daily Frequency",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersDailyFrequency__cio"
+        }
+      ],
+      "partitionBy": "Query__c",
+      "latestProcessTime": "2025-06-17T10:09:16.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:16.00000Z"
+    },
+    {
+      "name": "SASearchAnswersDailyFrequency__cio_HOUR",
+      "displayName": "Search Answers Daily Frequency_HOUR",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersDailyFrequency__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Query__c"
+    },
+    {
+      "name": "SASearchAnswersDailyFrequency__cio_DAY",
+      "displayName": "Search Answers Daily Frequency_DAY",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersDailyFrequency__cio_DAY"
+        }
+      ],
+      "partitionBy": "Query__c"
+    },
+    {
+      "name": "SASearchAnswersDailyFrequency__cio_MONTH",
+      "displayName": "Search Answers Daily Frequency_MONTH",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersDailyFrequency__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Query__c"
+    },
+    {
+      "name": "SASearchAnswersDailyFrequency__cio_QUARTER",
+      "displayName": "Search Answers Daily Frequency_QUARTER",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersDailyFrequency__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Query__c"
+    },
+    {
+      "name": "SASearchAnswersDailyFrequency__cio_YEAR",
+      "displayName": "Search Answers Daily Frequency_YEAR",
+      "dimensions": [
+        {
+          "name": "Query__c",
+          "displayName": "Query",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Answered__c",
+          "displayName": "Answered",
+          "type": "NUMBER",
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "Frequency__c",
+          "displayName": "Frequency",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SASearchAnswersDailyFrequency__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Query__c"
+    },
+    {
+      "name": "SAArticleInteractionPerSearchFeature__cio",
+      "displayName": "Article Interaction per Search Feature",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAArticleInteractionPerSearchFeature__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAArticleInteractionPerSearchFeature__cio"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c",
+      "latestProcessTime": "2025-06-17T10:09:24.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:24.00000Z"
+    },
+    {
+      "name": "SADailyMostSearchedQueries__cio",
+      "displayName": "Daily Most Searched Queries",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyMostSearchedQueries__cio"
+        }
+      ],
+      "partitionBy": "QueryText__c",
+      "latestProcessTime": "2025-06-17T10:10:54.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:54.00000Z"
+    },
+    {
+      "name": "SADailyMostSearchedQueries__cio_HOUR",
+      "displayName": "Daily Most Searched Queries_HOUR",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyMostSearchedQueries__cio_HOUR"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyMostSearchedQueries__cio_DAY",
+      "displayName": "Daily Most Searched Queries_DAY",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyMostSearchedQueries__cio_DAY"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyMostSearchedQueries__cio_MONTH",
+      "displayName": "Daily Most Searched Queries_MONTH",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyMostSearchedQueries__cio_MONTH"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyMostSearchedQueries__cio_QUARTER",
+      "displayName": "Daily Most Searched Queries_QUARTER",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyMostSearchedQueries__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyMostSearchedQueries__cio_YEAR",
+      "displayName": "Daily Most Searched Queries_YEAR",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TimesSearched__c",
+          "displayName": "Times Searched",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyMostSearchedQueries__cio_YEAR"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyUsers__cio",
+      "displayName": "Daily Users",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfUsers__c",
+          "displayName": "Number of Users",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyUsers__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:11:08.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:08.00000Z"
+    },
+    {
+      "name": "SADailyUsers__cio_HOUR",
+      "displayName": "Daily Users_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfUsers__c",
+          "displayName": "Number of Users",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyUsers__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyUsers__cio_DAY",
+      "displayName": "Daily Users_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfUsers__c",
+          "displayName": "Number of Users",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyUsers__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyUsers__cio_MONTH",
+      "displayName": "Daily Users_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfUsers__c",
+          "displayName": "Number of Users",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyUsers__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyUsers__cio_QUARTER",
+      "displayName": "Daily Users_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfUsers__c",
+          "displayName": "Number of Users",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyUsers__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyUsers__cio_YEAR",
+      "displayName": "Daily Users_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfUsers__c",
+          "displayName": "Number of Users",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery",
+          "toEntity": "SADailyUsers__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersReactions__cio",
+      "displayName": "Search Answers Reactions",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalPositive__c",
+          "displayName": "Total Positive",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "TotalNegative__c",
+          "displayName": "TotalNegative",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentPositive__c",
+          "displayName": "Percent Positive",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentNegative__c",
+          "displayName": "Percent Negative",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersReactions__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:09:41.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:41.00000Z"
+    },
+    {
+      "name": "SASearchAnswersReactions__cio_HOUR",
+      "displayName": "Search Answers Reactions_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalPositive__c",
+          "displayName": "Total Positive",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "TotalNegative__c",
+          "displayName": "TotalNegative",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentPositive__c",
+          "displayName": "Percent Positive",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentNegative__c",
+          "displayName": "Percent Negative",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersReactions__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersReactions__cio_DAY",
+      "displayName": "Search Answers Reactions_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalPositive__c",
+          "displayName": "Total Positive",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "TotalNegative__c",
+          "displayName": "TotalNegative",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentPositive__c",
+          "displayName": "Percent Positive",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentNegative__c",
+          "displayName": "Percent Negative",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersReactions__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersReactions__cio_MONTH",
+      "displayName": "Search Answers Reactions_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalPositive__c",
+          "displayName": "Total Positive",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "TotalNegative__c",
+          "displayName": "TotalNegative",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentPositive__c",
+          "displayName": "Percent Positive",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentNegative__c",
+          "displayName": "Percent Negative",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersReactions__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersReactions__cio_QUARTER",
+      "displayName": "Search Answers Reactions_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalPositive__c",
+          "displayName": "Total Positive",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "TotalNegative__c",
+          "displayName": "TotalNegative",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentPositive__c",
+          "displayName": "Percent Positive",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentNegative__c",
+          "displayName": "Percent Negative",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersReactions__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SASearchAnswersReactions__cio_YEAR",
+      "displayName": "Search Answers Reactions_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "TotalPositive__c",
+          "displayName": "Total Positive",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "TotalNegative__c",
+          "displayName": "TotalNegative",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentPositive__c",
+          "displayName": "Percent Positive",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        },
+        {
+          "name": "PercentNegative__c",
+          "displayName": "Percent Negative",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SASearchAnswersReactions__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAArticleSearchPerSearchFeature__cio",
+      "displayName": "Article Search per Search Feature",
+      "dimensions": [
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAArticleSearchPerSearchFeature__cio"
+        }
+      ],
+      "partitionBy": "SearchFeatureType__c",
+      "latestProcessTime": "2025-06-17T10:10:47.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:10:47.00000Z"
+    },
+    {
+      "name": "SAQueriesPerSearchFeature__cio",
+      "displayName": "Queries per Search Feature",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAQueriesPerSearchFeature__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:08:14.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:08:14.00000Z"
+    },
+    {
+      "name": "SAQueriesPerSearchFeature__cio_HOUR",
+      "displayName": "Queries per Search Feature_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAQueriesPerSearchFeature__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueriesPerSearchFeature__cio_DAY",
+      "displayName": "Queries per Search Feature_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAQueriesPerSearchFeature__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueriesPerSearchFeature__cio_MONTH",
+      "displayName": "Queries per Search Feature_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAQueriesPerSearchFeature__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueriesPerSearchFeature__cio_QUARTER",
+      "displayName": "Queries per Search Feature_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAQueriesPerSearchFeature__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAQueriesPerSearchFeature__cio_YEAR",
+      "displayName": "Queries per Search Feature_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfQueries__c",
+          "displayName": "Number Of Queries",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAQueriesPerSearchFeature__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyInteractionsPerUser__cio",
+      "displayName": "Daily Interactions per User",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "InteractionsPerUsers__c",
+          "displayName": "InteractionsPerUsers",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SADailyInteractionsPerUser__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:08:53.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:08:53.00000Z"
+    },
+    {
+      "name": "SADailyInteractionsPerUser__cio_HOUR",
+      "displayName": "Daily Interactions per User_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "InteractionsPerUsers__c",
+          "displayName": "InteractionsPerUsers",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SADailyInteractionsPerUser__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyInteractionsPerUser__cio_DAY",
+      "displayName": "Daily Interactions per User_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "InteractionsPerUsers__c",
+          "displayName": "InteractionsPerUsers",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SADailyInteractionsPerUser__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyInteractionsPerUser__cio_MONTH",
+      "displayName": "Daily Interactions per User_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "InteractionsPerUsers__c",
+          "displayName": "InteractionsPerUsers",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SADailyInteractionsPerUser__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyInteractionsPerUser__cio_QUARTER",
+      "displayName": "Daily Interactions per User_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "InteractionsPerUsers__c",
+          "displayName": "InteractionsPerUsers",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SADailyInteractionsPerUser__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyInteractionsPerUser__cio_YEAR",
+      "displayName": "Daily Interactions per User_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeature__c",
+          "displayName": "SearchFeature",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "InteractionsPerUsers__c",
+          "displayName": "InteractionsPerUsers",
+          "type": "NUMBER",
+          "rollupable": false,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SubQuery2",
+          "toEntity": "SADailyInteractionsPerUser__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SADailyInteractionsPerQuery__cio",
+      "displayName": "Daily Interactions per Query",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio"
+        }
+      ],
+      "partitionBy": "QueryText__c",
+      "latestProcessTime": "2025-06-17T10:09:47.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:09:47.00000Z"
+    },
+    {
+      "name": "SADailyInteractionsPerQuery__cio_HOUR",
+      "displayName": "Daily Interactions per Query_HOUR",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_HOUR"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_HOUR"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_HOUR"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyInteractionsPerQuery__cio_DAY",
+      "displayName": "Daily Interactions per Query_DAY",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_DAY"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_DAY"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_DAY"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyInteractionsPerQuery__cio_MONTH",
+      "displayName": "Daily Interactions per Query_MONTH",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_MONTH"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_MONTH"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_MONTH"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyInteractionsPerQuery__cio_QUARTER",
+      "displayName": "Daily Interactions per Query_QUARTER",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SADailyInteractionsPerQuery__cio_YEAR",
+      "displayName": "Daily Interactions per Query_YEAR",
+      "dimensions": [
+        {
+          "name": "QueryText__c",
+          "displayName": "Query Text (100 Chars)",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "QueryId__c",
+          "displayName": "Query ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchQueries__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_YEAR"
+        },
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_YEAR"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SADailyInteractionsPerQuery__cio_YEAR"
+        }
+      ],
+      "partitionBy": "QueryText__c"
+    },
+    {
+      "name": "SAInteractionsPerSearchFeature__cio",
+      "displayName": "Interactions per Search Feature",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio"
+        }
+      ],
+      "partitionBy": "Date__c",
+      "latestProcessTime": "2025-06-17T10:11:21.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:21.00000Z"
+    },
+    {
+      "name": "SAInteractionsPerSearchFeature__cio_HOUR",
+      "displayName": "Interactions per Search Feature_HOUR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_HOUR"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_HOUR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAInteractionsPerSearchFeature__cio_DAY",
+      "displayName": "Interactions per Search Feature_DAY",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_DAY"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_DAY"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAInteractionsPerSearchFeature__cio_MONTH",
+      "displayName": "Interactions per Search Feature_MONTH",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_MONTH"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_MONTH"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAInteractionsPerSearchFeature__cio_QUARTER",
+      "displayName": "Interactions per Search Feature_QUARTER",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_QUARTER"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_QUARTER"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAInteractionsPerSearchFeature__cio_YEAR",
+      "displayName": "Interactions per Search Feature_YEAR",
+      "dimensions": [
+        {
+          "name": "Date__c",
+          "displayName": "Date",
+          "type": "DATE",
+          "businessType": "DATE"
+        },
+        {
+          "name": "SearchFeatureType__c",
+          "displayName": "Search Feature Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        },
+        {
+          "name": "InteractionType__c",
+          "displayName": "Interaction Type",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "NumberOfInteractions__c",
+          "displayName": "Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_YEAR"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAInteractionsPerSearchFeature__cio_YEAR"
+        }
+      ],
+      "partitionBy": "Date__c"
+    },
+    {
+      "name": "SAAvgInteractionsPerArticleRange__cio",
+      "displayName": "Avg Interactions per Article in Range",
+      "dimensions": [
+        {
+          "name": "ArticleId__c",
+          "displayName": "Article ID",
+          "type": "STRING",
+          "businessType": "TEXT"
+        }
+      ],
+      "measures": [
+        {
+          "name": "AverageNumberOfInteractions__c",
+          "displayName": "Average Number of Interactions",
+          "type": "NUMBER",
+          "rollupable": true,
+          "businessType": "NUMBER"
+        }
+      ],
+      "relationships": [
+        {
+          "fromEntity": "SASearchResults__dlm",
+          "toEntity": "SAAvgInteractionsPerArticleRange__cio"
+        },
+        {
+          "fromEntity": "SASearchInteractions__dlm",
+          "toEntity": "SAAvgInteractionsPerArticleRange__cio"
+        }
+      ],
+      "partitionBy": "ArticleId__c",
+      "latestProcessTime": "2025-06-17T10:11:33.00000Z",
+      "latestSuccessfulProcessTime": "2025-06-17T10:11:33.00000Z"
+    }
+  ]
+}

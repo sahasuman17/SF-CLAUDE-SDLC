@@ -1,0 +1,47 @@
+<template>
+   <!-- <c-generic-autocomplete
+    object-api-name="Account"
+    field-api-name="Name"
+    label="Search Accounts"
+    placeholder="Type account name..."
+    onselect={handleAccountSelect}>
+</c-generic-autocomplete>-->
+  <lightning-card>
+
+    <div class="icon-header" style="display: flex; align-items: center;">
+      <div class="icon-box-medium" style="margin-right: 0.5rem;">
+        <lightning-icon icon-name="utility:hierarchy" alternative-text="Hierarchy" size="x-small" class="icon-inside"></lightning-icon>
+      </div>
+      <div class="icon-label" style="font-weight: bold;">Account Hierarchy</div>
+    </div>
+    <div class="tree-container">
+    <!--div class="background-banner"-->
+      <!-- Header (Borrower Info) -->
+      <div class="borrower">
+        <lightning-icon style="margin-left:-37px" icon-name="standard:person_account" size="large"></lightning-icon>
+        <div style="margin-left:-37px" class="name">{accountName}</div>
+        <div style="margin-left:-37px" class="label">Unified Loan Account</div>
+      </div>
+    <!--/div-->
+      <!-- Vertical line from icon to horizontal bar -->
+      <div class="center-connector">
+        <div class="vertical-line"></div>
+      </div>
+
+      <!-- Horizontal Line and Loan Cards -->
+      <div class="horizontal-line-container">
+        <div class="horizontal-line"></div>
+
+        <div class="child-nodes">
+          <template for:each={relatedAccounts} for:item="acc">
+            <div key={acc} class="child-wrapper">
+              <div class="child-connector"></div>
+              <div class="child-box">{acc.account_name__c} - {acc.source__c}</div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-separator"></div>
+  </lightning-card>
+</template>

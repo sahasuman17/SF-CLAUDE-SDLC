@@ -1,0 +1,108 @@
+<template>
+  <div style="width:100%;" >
+  
+    <div class="chatroom__messages style-3">
+    
+     <template lwc:if={isNotListening}>
+        
+      
+      </template>
+      <template lwc:else>
+  
+         <h3 class="alignListeningText slds-p-around_medium">
+            
+                <p class="slds-p-horizontal_small">{initialText}</p>
+            
+        </h3>
+    </template>
+    <section role="log" class="slds-chat">
+       <header class="slds-card__header  header-ui">
+        <lightning-icon icon-name="utility:engage" class="custom-engage" 
+          aria-hidden="true" alternative-text="engage text.." size="medium" title="engage" >
+          </lightning-icon>
+        <label>Mortgage Agent Bot</label>
+        <lightning-input  style="float:right" data-id="toggle1" type="toggle" label="Guarded" checked={checked} onchange={changeToggle} message-toggle-active="" message-toggle-inactive="" ></lightning-input>
+        </header>
+        <section class="helper-ui init-text">
+          <lightning-icon icon-name="utility:engage" class="custom-engage" 
+          aria-hidden="true" alternative-text="engage text.." size="large" title="engage" >
+          </lightning-icon>
+          <h3 class="helper-text">Chat with your data</h3>
+       </section>
+      <ul class="slds-chat-list chat-request">
+      </ul>
+    </section>
+  
+  
+    <section role="log" class="slds-chat">
+      <div class="pdf-modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick={closeModal}>×</span>
+            <div class="pdf-content">
+                <!-- PDF will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>  
+       
+      <ul class="slds-chat-list chat-response">
+          <template if:true={showForm}>
+            <li style="web-webkit-transform:none!important;direction:none;transform:none;">
+              <div class="slds-chat-message" style="margin-top:1rem">
+                    <div style="display:table-cell;border-collapse: separate;border-spacing: 10px 0;" class="slds-chat-message__body slds-grid">
+                            <div style="display:table-cell;" aria-hidden="true" class="slds-size_1-of-13">
+                                
+                            </div>
+                        <div style="display:table-cell;padding-top:6px !important;text-align:justify;background:#f6f9fb;color:#36454F;padding-bottom-3px !important;font-family:'Segoe UI', Helvetica, Arial, sans-serif;font-size:15px;border:1px solid #dcf6ff;box-shadow:0px 3px 1px -2px rgba(145, 158, 171, 0.2),0px 2px 2px 0px rgba(145, 158, 171, 0.14),0px 1px 5px 0px rgba(145, 158, 171, 0.12);" class="slds-size_12-of-13 slds-chat-message__text_inbound slds-card msgcard">
+                            <span class="response-content">
+                              <c-dynamic-details-form></c-dynamic-details-form>
+                            </span>
+                        </div>    
+                    </div>
+              </div>      
+            </li>
+            
+        </template>
+      </ul>
+    </section>
+    <template if:true={isTyping}>
+      <div style="bottom:4rem;position:absolute;width:80%"  class="slds-align_absolute-center chatroom__typing-wrap slds-m-vertical_xx-small">
+          <div class="chatroom__typing">
+              <div class="chatroom__typing-line slds-m-horizontal_xx-small"></div>
+              <div class="chatroom__typing-line slds-m-horizontal_xx-small"></div>
+              <div class="chatroom__typing-line slds-m-horizontal_xx-small"></div>
+          </div>
+      </div>
+    </template>
+  </div>
+  <div style="height:70px;align-content:center;background:#c2e8ff;border-bottom-left-radius:0.5rem; border-bottom-right-radius:0.5rem;">
+    <div class="slds-card" style="height:50px;align-content:center;background:white;margin-left:10px;margin-right:10px;"> 
+      
+    <div class="slds-is-relative innerDiv">
+          <input type="text" value={searchKey} class="slds-textarea input-ui" placeholder={inputPlaceholderText} onkeydown={handleKeyDown}/>
+        <div style="margin-top:3px;">
+          <lightning-icon icon-name="utility:send" class="send-ui" 
+          aria-hidden="true" alternative-text="Send your queries" size="small" title="Click to submit">
+          </lightning-icon>
+          <!-- <img style="cursor:pointer;width:100%" src="/resource/1728477664000/bot_icons/send.png"/> -->
+        </div>
+      <template lwc:if={isNotListening}>
+        <div id="utilityNotListening" style="margin-top:2px" onclick={doAction}>
+          <lightning-icon icon-name="utility:unmuted"  class="slds-icon slds-icon_x-small slds-icon-text-default" 
+          aria-hidden="true" alternative-text="Click to say Something.." size="small" title="Not Listening">
+          </lightning-icon>
+        </div>
+    </template>
+    <template lwc:else>
+      <div id="utilityListening" class="slds-is-relative alignOnMic" onclick={doAction}>
+        <lightning-icon icon-name="custom:custom35"  class="slds-icon slds-icon-text-default" 
+          aria-hidden="true" alternative-text="Click to say Something.." size="medium" title="Listening">
+          </lightning-icon>
+
+        
+      </div>
+    </template>
+</div>
+</div>
+</div>
+</div>   
+  </template>
