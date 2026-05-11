@@ -1,0 +1,16 @@
+# Claude Code local config
+.claude/settings.local.json
+
+# MCP config (may contain API keys or local paths)
+.mcp.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Salesforce
+.sfdx/
+.sf/
