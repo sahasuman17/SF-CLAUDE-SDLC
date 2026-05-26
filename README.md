@@ -1,6 +1,6 @@
-# Salesforce DX Project: Next Steps
+# agcoclaudepoc — Salesforce DX Project
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Repository for Agco claude poc.
 
 ## How Do You Plan to Deploy Your Changes?
 
