@@ -1,0 +1,240 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   caseCreate.css — MP-8 Product Information Section
+   Matches MP-8 Mockup.png layout and color specifications exactly.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Page wrapper ──────────────────────────────────────────────────────── */
+.case-create-wrapper {
+    background-color: #f3f2f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Header bar ────────────────────────────────────────────────────────── */
+.case-header {
+    background-color: #1a1a1a;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+}
+
+.case-header__title {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
+/* ─── Sub-header ────────────────────────────────────────────────────────── */
+.case-subheader {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.case-subheader__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.case-subheader__record-type {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #181818;
+}
+
+.case-subheader__case-number {
+    font-size: 0.875rem;
+    color: #181818;
+}
+
+.case-subheader__status-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.case-subheader__status-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #181818;
+}
+
+.case-subheader__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+}
+
+.case-subheader__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.case-subheader__icon-btn {
+    display: none; /* icon merged into text button via label */
+}
+
+.case-subheader__action-btn {
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    background: #ffffff;
+    color: #181818;
+    cursor: pointer;
+}
+
+.case-subheader__action-btn:hover {
+    background-color: #f3f2f2;
+}
+
+.case-subheader__required-legend {
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.case-required-asterisk {
+    color: #c23934;
+    font-weight: 700;
+    margin-right: 0.125rem;
+}
+
+/* ─── Divider ───────────────────────────────────────────────────────────── */
+.case-divider {
+    height: 1px;
+    background-color: #dddbda;
+    margin: 0 1.5rem;
+}
+
+/* ─── Section containers ────────────────────────────────────────────────── */
+.slds-section {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0.75rem 1.5rem 1.25rem;
+}
+
+/* Override SLDS section title to match mockup chevron-label style */
+.slds-section__title {
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.slds-section__title-action {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #181818;
+    padding: 0;
+    gap: 0.375rem;
+}
+
+/* ─── Toggle row ────────────────────────────────────────────────────────── */
+.section-toggle-row {
+    margin-bottom: 0.75rem;
+}
+
+/* ─── Serial number row ─────────────────────────────────────────────────── */
+.serial-input-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.serial-input-field {
+    width: 300px;
+}
+
+/* Clear Search link — red text, no underline */
+.clear-search-btn {
+    background: none;
+    border: none;
+    color: #c23934;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.clear-search-btn:hover {
+    text-decoration: underline;
+}
+
+/* ─── Asset found success message ───────────────────────────────────────── */
+.asset-found-message {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.asset-found-icon {
+    flex-shrink: 0;
+}
+
+.asset-found-text {
+    font-size: 0.8125rem;
+    color: #2e7d32;
+    font-style: italic;
+}
+
+/* ─── Product rows ──────────────────────────────────────────────────────── */
+.product-row {
+    margin-bottom: 0.75rem;
+}
+
+/* Ensure disabled lightning-input retains input border (not label style) */
+.slds-section__content lightning-input {
+    --lwc-colorTextInput: #181818;
+}
+
+/* Row 3 record-picker label alignment */
+.slds-form-element__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #3e3e3c;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+/* ─── Error alert ───────────────────────────────────────────────────────── */
+.slds-notify_alert {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+/* ─── Footer button bar ─────────────────────────────────────────────────── */
+.case-footer {
+    background-color: #ffffff;
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid #dddbda;
+    position: sticky;
+    bottom: 0;
+}
+
+/* Save button — dark red / maroon fill matching mockup */
+.footer-btn--save {
+    --lwc-colorBrand: #8b1a1a;
+    --lwc-colorBrandDark: #6b1414;
+    --lwc-colorBrandDarker: #4f0f0f;
+}
+
+/* Outline buttons — red text matching mockup */
+.footer-btn--outline lightning-button button {
+    color: #c23934;
+    border-color: #c23934;
+}
